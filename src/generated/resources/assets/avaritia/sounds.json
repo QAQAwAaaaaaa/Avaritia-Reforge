@@ -1,10 +1,9 @@
 {
   "gaping_void": {
-    "category": "hostile",
     "sounds": [
       {
         "name": "avaritia:gaping_void",
-        "stream": false
+        "stream": true
       }
     ]
   }

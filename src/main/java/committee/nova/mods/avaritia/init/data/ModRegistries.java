@@ -1,6 +1,7 @@
-package committee.nova.mods.avaritia.init.registry;
+package committee.nova.mods.avaritia.init.data;
 
 import committee.nova.mods.avaritia.Static;
+import committee.nova.mods.avaritia.init.registry.ModDamageTypes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.RegistrySetBuilder;
@@ -32,6 +33,7 @@ public class ModRegistries extends DatapackBuiltinEntriesProvider {
 
     public static void addProviders(boolean isServer, DataGenerator generator, PackOutput output, CompletableFuture<HolderLookup.Provider> provider, ExistingFileHelper helper) {
         generator.addProvider(isServer, new ModRegistries(output, provider));
+        generator.addProvider(isServer, new ModDamageTypeTags(output, provider.thenApply(r -> append(r, BUILDER)), helper));
     }
 
     private static HolderLookup.Provider append(HolderLookup.Provider original, RegistrySetBuilder builder) {

@@ -1,12 +1,13 @@
 {
-	"parent": "minecraft:block/cube",
-    "textures": {
-		"north": "avaritia:blocks/machine/compressor/side",
-		"east": "avaritia:blocks/machine/compressor/side",
-		"south": "avaritia:blocks/machine/compressor/active",
-		"west": "avaritia:blocks/machine/compressor/side",
-		"up": "avaritia:blocks/machine/compressor/top",
-		"down": "avaritia:blocks/machine/compressor/side",
-		"particle": "avaritia:blocks/machine/compressor/top"
+  "render_type": "minecraft:cutout",
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "north": "avaritia:blocks/machine/compressor/side",
+    "east": "avaritia:blocks/machine/compressor/side",
+    "south": "avaritia:blocks/machine/compressor/active",
+    "west": "avaritia:blocks/machine/compressor/side",
+    "up": "avaritia:blocks/machine/compressor/top",
+    "down": "avaritia:blocks/machine/compressor/side",
+    "particle": "avaritia:blocks/machine/compressor/top"
   }
 }

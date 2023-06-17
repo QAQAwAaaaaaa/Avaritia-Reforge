@@ -2,11 +2,14 @@ package committee.nova.mods.avaritia.common.item.singularity;
 
 import committee.nova.mods.avaritia.Static;
 import committee.nova.mods.avaritia.api.init.iface.IColored;
+import committee.nova.mods.avaritia.common.entity.ImmortalItemEntity;
 import committee.nova.mods.avaritia.init.ModTooltips;
+import committee.nova.mods.avaritia.init.registry.ModEntities;
 import committee.nova.mods.avaritia.util.SingularityUtils;
 import committee.nova.mods.avaritia.util.lang.Localizable;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
@@ -15,6 +18,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.function.Function;
@@ -76,9 +80,9 @@ public class SingularityItem extends Item implements IColored {
         return i == 0 ? singularity.getUnderlayColor() : i == 1 ? singularity.getOverlayColor() : -1;
     }
 
-//    @Nullable
-//    @Override
-//    public Entity createEntity(Level level, Entity location, ItemStack stack) {
-//        return  ImmortalItemEntity.create(ModEntities.IMMORTAL.get(), level, location.getX(), location.getY(), location.getZ(), stack);
-//    }
+    @Nullable
+    @Override
+    public Entity createEntity(Level level, Entity location, ItemStack stack) {
+        return ImmortalItemEntity.create(ModEntities.IMMORTAL.get(), level, location.getX(), location.getY(), location.getZ(), stack);
+    }
 }

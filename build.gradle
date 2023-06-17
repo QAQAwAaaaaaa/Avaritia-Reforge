@@ -34,7 +34,6 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
-            ideaModule rootProject.name != project.name ? "${rootProject.name}.${project.name}.main" : "${project.name}.main"
 
             mods {
                 avaritia {
@@ -49,8 +48,18 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
-            ideaModule rootProject.name != project.name ? "${rootProject.name}.${project.name}.main" : "${project.name}.main"
 
+            mods {
+                avaritia {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        data {
+            workingDirectory project.file('run')
+            args '--mod', 'avaritia', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing', file('src/generated/resources/')
+            environment 'target', 'fmluserdevdata'
             mods {
                 avaritia {
                     source sourceSets.main

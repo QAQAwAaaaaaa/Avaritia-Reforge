@@ -15,6 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Description:
@@ -31,7 +32,7 @@ public class WingInfinityLayer extends RenderLayer<Player, HumanoidModel<Player>
     }
 
     @Override
-    public void render(PoseStack poseStack, MultiBufferSource bufferIn, int pPackedLight, Player player, float pLimbSwing, float pLimbSwingAmount, float pPartialTicks, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
+    public void render(@NotNull PoseStack poseStack, @NotNull MultiBufferSource bufferIn, int pPackedLight, @NotNull Player player, float pLimbSwing, float pLimbSwingAmount, float pPartialTicks, float pAgeInTicks, float pNetHeadYaw, float pHeadPitch) {
 
         var loc = new ResourceLocation(Static.MOD_ID, "textures/models/armor/infinity_armor_wing.png");
 

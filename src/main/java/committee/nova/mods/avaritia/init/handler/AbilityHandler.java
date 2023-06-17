@@ -185,7 +185,7 @@ public class AbilityHandler {
     private static void handleLeggingsStateChange(LivingEntity entity, boolean isNew) {
         String key = entity.getEncodeId() + "|" + entity.getCommandSenderWorld().isClientSide;
 
-        if (entity instanceof Player player) {
+        if (entity instanceof Player) {
             if (isNew) {
                 entitiesWithLeggings.add(key);
             } else {
@@ -253,13 +253,13 @@ public class AbilityHandler {
     @SubscribeEvent
     public static void opTool(PlayerEvent.ItemCraftedEvent event) {
         ItemStack stack = event.getCrafting();
-        if (stack.getItem().equals(ModItems.infinity_sword)) {
-            if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.MOB_LOOTING, stack) < 10) {
+        if (stack.getItem().equals(ModItems.infinity_sword.get())) {
+            if (EnchantmentHelper.getTagEnchantmentLevel(Enchantments.MOB_LOOTING, stack) < 10) {
                 stack.enchant(Enchantments.MOB_LOOTING, 10);
             }
         }
-        if (stack.getItem().equals(ModItems.infinity_bow)) {
-            if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.INFINITY_ARROWS, stack) < 10) {
+        if (stack.getItem().equals(ModItems.infinity_bow.get())) {
+            if (EnchantmentHelper.getTagEnchantmentLevel(Enchantments.INFINITY_ARROWS, stack) < 10) {
                 stack.enchant(Enchantments.INFINITY_ARROWS, 10);
             }
         }

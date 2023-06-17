@@ -30,15 +30,15 @@ public class ModEntities {
             () -> EntityType.Builder.of(ImmortalItemEntity::new, MobCategory.MISC).sized(0.25f, 0.25f)
                     .build(new ResourceLocation(Static.MOD_ID, "immortal").toString()));
 
-    public static final RegistryObject<EntityType<EndestPearlEntity>> EnderPearl = ENTITIES.register("enderst_pearl",
-            () -> EntityType.Builder.of(EndestPearlEntity::new, MobCategory.MISC).sized(0.25f, 0.25f)
+    public static final RegistryObject<EntityType<EndestPearlEntity>> ENDER_PEARL = ENTITIES.register("enderst_pearl",
+            () -> EntityType.Builder.<EndestPearlEntity>of(EndestPearlEntity::new, MobCategory.MISC).sized(0.25f, 0.25f)
                     .build(new ResourceLocation(Static.MOD_ID, "enderst_pearl").toString()));
 
-    public static final RegistryObject<EntityType<GapingVoidEntity>> GapingVoid = ENTITIES.register("gaping_void",
+    public static final RegistryObject<EntityType<GapingVoidEntity>> GAPING_VOID = ENTITIES.register("gaping_void",
             () -> EntityType.Builder.<GapingVoidEntity>of(GapingVoidEntity::new, MobCategory.MISC)
                     .build(new ResourceLocation(Static.MOD_ID, "gaping_void").toString()));
 
-    public static final RegistryObject<EntityType<HeavenArrowEntity>> HeavenArrow = ENTITIES.register("heaven_arrow",
+    public static final RegistryObject<EntityType<HeavenArrowEntity>> HEAVEN_ARROW = ENTITIES.register("heaven_arrow",
             () -> EntityType.Builder.<HeavenArrowEntity>of(HeavenArrowEntity::new, MobCategory.MISC)
                     .sized(0.5F, 0.5F)
                     .clientTrackingRange(32)
@@ -46,7 +46,7 @@ public class ModEntities {
                     .setShouldReceiveVelocityUpdates(true)
                     .build(new ResourceLocation(Static.MOD_ID, "heaven_arrow").toString()));
 
-    public static final RegistryObject<EntityType<HeavenSubArrowEntity>> HeavenSubArrow = ENTITIES.register("heaven_sub_arrow",
+    public static final RegistryObject<EntityType<HeavenSubArrowEntity>> HEAVEN_SUB_ARROW = ENTITIES.register("heaven_sub_arrow",
             () -> EntityType.Builder.<HeavenSubArrowEntity>of(HeavenSubArrowEntity::new, MobCategory.MISC)
                     .sized(0.5F, 0.5F)
                     .clientTrackingRange(32)
@@ -57,10 +57,10 @@ public class ModEntities {
 
     @OnlyIn(Dist.CLIENT)
     public static void onClientSetup() {
-        EntityRenderers.register(ModEntities.EnderPearl.get(), ThrownItemRenderer::new);
-        EntityRenderers.register(ModEntities.GapingVoid.get(), GapingVoidRender::new);
-        EntityRenderers.register(ModEntities.HeavenArrow.get(), HeavenArrowRender::new);
-        EntityRenderers.register(ModEntities.HeavenSubArrow.get(), HeavenSubArrowRender::new);
+        EntityRenderers.register(ModEntities.ENDER_PEARL.get(), ThrownItemRenderer::new);
+        EntityRenderers.register(ModEntities.GAPING_VOID.get(), GapingVoidRender::new);
+        EntityRenderers.register(ModEntities.HEAVEN_ARROW.get(), HeavenArrowRender::new);
+        EntityRenderers.register(ModEntities.HEAVEN_SUB_ARROW.get(), HeavenSubArrowRender::new);
     }
 
 }
